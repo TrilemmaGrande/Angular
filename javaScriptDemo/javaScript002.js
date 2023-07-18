@@ -1,6 +1,6 @@
 
 
-var alpha      =    'alpha'
-var     beta="beta"
+var alpha = 'alpha'
+var beta = "beta"
 let var2 = 2
-console.log(alpha,beta) 
+console.log(alpha, beta) 
