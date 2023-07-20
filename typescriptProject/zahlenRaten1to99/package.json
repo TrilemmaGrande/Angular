@@ -1,0 +1,14 @@
+{
+  "name": "zahlenraten1to99",
+  "version": "1.0.0",
+  "description": "zahlen Raten",
+  "main": "zahlenraten1to99",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "trilemma",
+  "license": "MIT",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
