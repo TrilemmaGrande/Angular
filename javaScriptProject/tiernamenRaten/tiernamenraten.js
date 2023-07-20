@@ -1,7 +1,6 @@
 const prompt = require("prompt-sync")({ sigint: true });
 
-var tiernamenListe = ["Fuchs", "Dachs", "Elefant"];// "Gans", "Elefant", "Giraffe"
-var tiernameGesucht =
+var tiernamenListe = ['Fuchs', 'Dachs', 'Elefant', 'Delphin', 'Fuchs', 'Gans', 'Giraffe'];
   tiernamenListe[Math.floor(Math.random() * tiernamenListe.length)];
 var tiernameTemp = tiernameGesucht.toLowerCase();
 var buchstabenListe = [];
