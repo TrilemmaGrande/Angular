@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'mfa-root',
+  selector: 'mfai-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myFirstAngular';
+  title = 'myFirstAngInput';
+  myName = 'ichundich';
 }
