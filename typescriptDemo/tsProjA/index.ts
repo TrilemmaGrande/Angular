@@ -1,2 +1,4 @@
-var hallo = "Hallo Duda!"
-console.log(hallo)
+var hallo = "Hallo Duda!";
+console.log(hallo);
+
+// test wie schnell ich schreibe
