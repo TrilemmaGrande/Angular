@@ -1,19 +1,60 @@
 /* MessagesComponent's private CSS styles */
 h2 {
-    color: #A80000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  
-  .clear {
-    color: #333;
-    background-color: #eee;
-    margin-bottom: 12px;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  .clear:hover {
-    color: white;
-    background-color: #42545C;
-  }
+  color: #a80000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+.frame {
+  position: relative;
+  padding: 5px;
+  border: 1px solid #42545c;
+  border-radius: 3px;
+  width: 300px;
+  height: 200px;
+}
+
+.logbox-outer-container {
+  padding: 5px;
+  height: 55%;
+  overflow-y: auto; /* Add scrollbar when content exceeds the height */
+}
+
+.logbox-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 5px;
+}
+
+.logbox-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  z-index: 2;
+}
+
+#logbox {
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  /* You can set a max-height here if you want to limit the logbox's height. */
+}
+
+.clear {
+  color: #333;
+  padding: .5rem 1.5rem;
+  background-color: #eee;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.clear:hover {
+  color: white;
+  background-color: #42545c;
+}
