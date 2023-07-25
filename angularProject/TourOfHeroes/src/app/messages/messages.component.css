@@ -16,15 +16,13 @@ h2 {
 }
 
 .logbox-outer-container {
-  padding: 5px;
-  height: 55%;
+  height: 65%;
   overflow-y: auto; /* Add scrollbar when content exceeds the height */
 }
 
 .logbox-container {
   position: relative;
   background-color: rgba(0, 0, 0, 0.03);
-  padding: 5px;
 }
 
 .logbox-mask {
@@ -49,7 +47,7 @@ h2 {
   padding: .5rem 1.5rem;
   background-color: #eee;
   margin-top: 5px;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   border-radius: 4px;
   font-size: 1rem;
 }
