@@ -14,10 +14,11 @@ input {
   border-radius: 3px;
   box-sizing: border-box;
   display: block;
+  border-radius: 3px;
 }
 
 input:focus {
-  outline: #336699 auto 1px;
+  outline: #336699 auto 1px; 
 }
 
 li {
