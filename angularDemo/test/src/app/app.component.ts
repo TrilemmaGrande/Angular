@@ -9,25 +9,31 @@ export class AppComponent {
   posX: number = 500;
   posY: number = 500;
   posSuffix: string = 'px';
+  lost : boolean = false;
+  
 
   @HostListener('window:keydown', ['$event'])
   public keyDown(event: KeyboardEvent): void {
+    const step : number = 100;
     switch (event.key) {
       case 'a':
-        this.posX -= 5;
+        this.posX -= step;
         break;
       case 'w':
-        this.posY -= 5;
+        this.posY -= step;
         break;
       case 's':
-        this.posY += 5;
+        this.posY += step;
         break;
       case 'd':
-        this.posX += 5;
+        this.posX += step;
         break;
 
       default:
         break;
     }
+  }
+  public mouseOver(){
+    this.lost = true;
   }
 }
