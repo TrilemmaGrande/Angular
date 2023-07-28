@@ -1,14 +1,11 @@
-import { Component } from '@angular/core';
-import { Book } from '../shared/book';
+import { Injectable } from '@angular/core';
+import { Book } from './book';
 
-@Component({
-  selector: 'bm-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
+@Injectable({
+  providedIn: 'root',
 })
-export class BookListComponent {
-  books: Book[] = [];
-
+export class BookStoreService {
+  private books: Book[] = [];
   constructor() {
     this.books = [
       {
@@ -30,5 +27,9 @@ export class BookListComponent {
         description: 'Tolle Backtipps für Mensch und Tier',
       },
     ];
+  }
+
+  getAll(): Book[] {
+    return this.books;
   }
 }
