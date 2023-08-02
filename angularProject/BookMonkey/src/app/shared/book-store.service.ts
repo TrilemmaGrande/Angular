@@ -22,6 +22,10 @@ export class BookStoreService {
     return this.http.get<Book>(`${this.apiUrl}/books/${isbn}`);
   }
 
+  create(book: Book): Observable<Book>{
+    return this.http.post<Book>(`${this.apiUrl}/books`,book)
+  }
+
   remove(isbn: string): Observable<unknown> {
     return this.http.delete(`${this.apiUrl}/books/${isbn}`);
   }
