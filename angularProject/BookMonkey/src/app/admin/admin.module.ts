@@ -6,9 +6,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 import { LocalIsoDateValueAccessor } from 'angular-date-value-accessor';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 @NgModule({
-  declarations: [BookFormComponent, BookCreateComponent],
+  declarations: [BookFormComponent, BookCreateComponent, BookEditComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
