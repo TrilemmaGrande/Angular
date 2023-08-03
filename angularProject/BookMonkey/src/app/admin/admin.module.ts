@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { FormsModule } from '@angular/forms';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookCreateComponent } from './book-create/book-create.component';
-
+import { LocalIsoDateValueAccessor } from 'angular-date-value-accessor';
 
 @NgModule({
-  declarations: [
-    BookFormComponent,
-    BookCreateComponent
-  ],
+  declarations: [BookFormComponent, BookCreateComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
-  ]
+    ReactiveFormsModule,
+    LocalIsoDateValueAccessor,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}
