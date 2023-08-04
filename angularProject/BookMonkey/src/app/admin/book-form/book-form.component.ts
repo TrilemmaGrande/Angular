@@ -1,5 +1,6 @@
 import {
   Component,
+  inject,
   EventEmitter,
   Output,
   Input,
@@ -7,6 +8,8 @@ import {
 } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book } from 'src/app/shared/book';
+import { atLeasteOneValue, isbnFormat } from '../shared/validators';
+import { AsyncValidatorsService } from '../shared/async-validators.service';
 
 @Component({
   selector: 'bm-book-form',
@@ -27,11 +30,8 @@ export class BookFormComponent implements OnChanges {
     }),
     isbn: new FormControl('', {
       nonNullable: true,
-      validators: [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(13),
-      ],
+      validators: [Validators.required, isbnFormat],
+      asyncValidators: inject(AsyncValidatorsService).isbnExists(),
     }),
     description: new FormControl('', { nonNullable: true }),
     published: new FormControl('', { nonNullable: true }),
@@ -63,6 +63,7 @@ export class BookFormComponent implements OnChanges {
   private buildAuthorsArray(authors: string[]) {
     return new FormArray(
       authors.map((v) => new FormControl(v, { nonNullable: true })),
+      atLeasteOneValue,
     );
   }
 
