@@ -12,5 +12,4 @@ export class HomeComponent {
   reset() {
     this.service.reset().subscribe();
   }
-
 }

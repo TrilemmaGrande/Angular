@@ -1,12 +1,13 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'isbn'
+  name: 'isbn',
 })
 export class IsbnPipe implements PipeTransform {
-    transform(value: string): string {
-        if (!value){ return '';}
-        return `${value.substring(0,3)}-${value.substring(3)};`
-        
+  transform(value: string): string {
+    if (!value) {
+      return '';
     }
+    return `${value.substring(0, 3)}-${value.substring(3)};`;
+  }
 }

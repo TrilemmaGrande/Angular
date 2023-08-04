@@ -6,15 +6,17 @@ import { Book } from 'src/app/shared/book';
 @Component({
   selector: 'bm-book-create',
   templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css']
+  styleUrls: ['./book-create.component.css'],
 })
 export class BookCreateComponent {
   constructor(
     private service: BookStoreService,
-    private router: Router
-  ){}
+    private router: Router,
+  ) {}
 
   create(book: Book) {
-    this.service.create(book).subscribe(createBook => { this.router.navigate(['/books',createBook.isbn])})
+    this.service.create(book).subscribe((createBook) => {
+      this.router.navigate(['/books', createBook.isbn]);
+    });
   }
 }

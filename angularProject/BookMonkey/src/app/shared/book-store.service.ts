@@ -46,6 +46,6 @@ export class BookStoreService {
     );
   }
   check(isbn: string): Observable<boolean> {
-    return this.http.get<boolean>(`${this.apiUrl}/books/${isbn}/check`)
+    return this.http.get<boolean>(`${this.apiUrl}/books/${isbn}/check`);
   }
 }
