@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book } from 'src/app/shared/book';
-import { atLeasteOneValue, isbnFormat } from '../shared/validators';
+import { atLeastOneValue, isbnFormat } from '../shared/validators';
 import { AsyncValidatorsService } from '../shared/async-validators.service';
 
 @Component({
@@ -63,7 +63,7 @@ export class BookFormComponent implements OnChanges {
   private buildAuthorsArray(authors: string[]) {
     return new FormArray(
       authors.map((v) => new FormControl(v, { nonNullable: true })),
-      atLeasteOneValue,
+      atLeastOneValue,
     );
   }
 

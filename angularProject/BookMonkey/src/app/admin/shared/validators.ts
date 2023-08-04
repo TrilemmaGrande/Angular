@@ -1,13 +1,13 @@
 import { isFormArray, ValidatorFn } from "@angular/forms";
 
-export const atLeasteOneValue: ValidatorFn = function(control) {
+export const atLeastOneValue: ValidatorFn = function(control) {
     if (!isFormArray(control)){
         return null;
     }
     if (control.controls.some(e1 => !!e1.value)){
         return null;
     }else{
-        return {atLeasteOneValue: true}
+        return {atLeastOneValue: true}
     }
 }
 
