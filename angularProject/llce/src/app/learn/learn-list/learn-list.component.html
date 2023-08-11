@@ -1,0 +1,8 @@
+<div *ngFor="let question of questions">
+    <h2>{{ question.questionType.toString() }}</h2>
+    <p>{{ question.question.toString()  }}</p>
+    <ul>
+      <li *ngFor="let option of question.options">{{ option.toString()  }}</li>
+    </ul>
+    <p>Correct Answer: {{ question.correctAnswer.join(' ').toString()  }}</p>
+</div>

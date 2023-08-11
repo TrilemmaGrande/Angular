@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../mnt/hgfs/bitlcrw/antonius.ehlen/angular-ae"
+		}
+	],
+	"settings": {
+		"powermode.enabled": true,
+		"powermode.presets": "particles",
+		"powermode.shake.enabled": false,
+		"powermode.shake.intensity": 3,
+		"powermode.combo.threshold": 5,
+		"powermode.combo.timeout": 5
+	}
+}
