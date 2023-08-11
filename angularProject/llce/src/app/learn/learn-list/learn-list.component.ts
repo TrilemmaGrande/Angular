@@ -8,8 +8,14 @@ import * as data from '../../../assets/question101.json';
   styleUrls: ['./learn-list.component.css'],
 })
 export class LearnListComponent {
-  questions: Question[] = data; 
+  questions: Question[] = []
 
-  constructor() {}
+
+  constructor() { 
+  }
+  ngOnInit() {
+    this.questions = data;
+    console.log('Data', this.questions);
 }
 
+}
