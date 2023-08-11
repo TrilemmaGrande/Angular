@@ -10,7 +10,7 @@ import { ExamComponent } from './exam/exam/exam.component';
 import { ResultComponent } from './result/result/result.component';
 import { QuestionComponent } from './question/question.component';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LearnModule } from './learn/learn.module';
 
 @NgModule({
@@ -26,9 +26,10 @@ import { LearnModule } from './learn/learn.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LearnModule
+    LearnModule,
+    HttpClientModule
   ],
-  providers: [HttpClient],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
