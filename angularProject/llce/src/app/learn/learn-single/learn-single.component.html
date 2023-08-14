@@ -1,1 +1,5 @@
-<p>learn-single works!</p>
+
+<div class="question-container" *ngIf="question$ | async as question">
+  <llce-question [question]="question" [showAnswer]="question.showAnswer"></llce-question>
+<button class="button" (click)="showAnswer(question)">Toggle Answer</button>
+  </div>

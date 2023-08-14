@@ -1,30 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Question } from 'src/app/shared/question';
-import { HttpClient } from '@angular/common/http';
+import { QuestionComponent } from 'src/app/question/question.component';
+import { QuestionService } from 'src/app/shared/question.service';
+import { LearnModule } from '../learn.module';
+
 
 @Component({
   selector: 'llce-learn-list',
   templateUrl: './learn-list.component.html',
   styleUrls: ['./learn-list.component.css'],
 })
-export class LearnListComponent implements OnInit {
-  questions: Question[] = [];
+export class LearnListComponent  {
+  questions$: Observable<Question[]>;
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    this.loadQuestions();
+  constructor(private service: QuestionService) {
+    this.questions$ = this.service.getQuestions();
   }
-
-  loadQuestions() {
-    this.http.get<Question[]>('../../../assets/question101.json').subscribe(
-      (data) => {
-        this.questions = data;
-        console.log('Data', this.questions);
-      },
-      (error) => {
-        console.error('Error loading questions', error);
-      }
-    );
+  showAnswer(question: Question) {
+    question.showAnswer = !question.showAnswer;
   }
 }
+
+ 

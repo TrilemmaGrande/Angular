@@ -4,17 +4,15 @@ import { LearnListComponent } from './learn-list/learn-list.component';
 import { LearnSingleComponent } from './learn-single/learn-single.component';
 import { LearnRoutingModule } from './learn-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionComponent } from '../question/question.component';
 
 
 @NgModule({
-  declarations: [
-    LearnSingleComponent,
-    LearnListComponent,
-  ],
+  declarations: [LearnSingleComponent, LearnListComponent, QuestionComponent],
   imports: [
     CommonModule,
     LearnRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
 })
-export class LearnModule { }
+export class LearnModule {}

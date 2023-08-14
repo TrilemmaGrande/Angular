@@ -1,0 +1,43 @@
+
+  /* Stil für den Fragetyp */
+  .question-type {
+    visibility: hidden;
+  }
+  .question-wrapper{
+    padding-left: 20%;
+    margin-right: 20%;
+    align-self: flex-start;
+    align-content: start;
+  }
+  /* Stil für die Frage */
+  .question-text {
+    display:block;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+ text-align: start;
+
+  }
+  
+  /* Stil für die Tabelle der Optionen */
+  .option-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: none;
+  }
+  
+  /* Stil für eine Option */
+  .option-item {
+    padding: 5px;
+    text-align: start;  
+    text-indent: 20%;
+}
+  
+  /* Stil für die korrekte Antwort */
+  .correct-answer {
+    font-style: italic;
+    color: #008000;
+    
+  }
+  

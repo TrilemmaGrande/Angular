@@ -1,47 +1,28 @@
 /* Stil für den Container der Fragen */
 .question-container {
+    position: relative;
+    display: block;
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 20px;
     background-color: #f5f5f5;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
-  /* Stil für den Fragetyp */
-  .question-type {
-    font-size: 18px;
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 10px;
     font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  /* Stil für die Frage */
-  .question-text {
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 10px;
-    text-align: start;  
-    text-indent: 20%;
-
-  }
-  
-  /* Stil für die Tabelle der Optionen */
-  .option-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
     border: none;
+    background-color: #007bff; /* Blue color */
+    color: #ffffff; /* White color */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  /* Stil für eine Option */
-  .option-item {
-    padding: 5px;
-    text-align: start;  
-    text-indent: 20%;
-}
-  
-  /* Stil für die korrekte Antwort */
-  .correct-answer {
-    font-style: italic;
-    color: #008000;
+  /* Style when hovering over the button */
+  .button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+    color: #ffffff; /* White color on hover */
   }
-  

@@ -9,7 +9,7 @@ const routes: Routes = [
     component: LearnListComponent,
   },
   {
-    path: 'learnSingle',
+    path: 'learnSingle/:questionID',
     component: LearnSingleComponent,
   },
 ];

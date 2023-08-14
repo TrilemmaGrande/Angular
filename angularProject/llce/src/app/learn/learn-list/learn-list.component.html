@@ -1,10 +1,5 @@
-<div class="question-container" *ngFor="let question of questions">
-  <h2 class="question-type">{{ question.questionType }}</h2>
-  <p class="question-text">{{ question.question }}</p>
-  <table class="option-table">
-    <tr *ngFor="let option of question.options">
-      <td class="option-item">{{ option }}</td>
-    </tr>
-  </table>
-  <p class="correct-answer">Correct Answer: {{ question.correctAnswer.join(' ') }}</p>
+
+<div class="question-container" *ngFor="let question of questions$ | async as questions">
+<llce-question [question]="question" [showAnswer]="question.showAnswer"></llce-question>
+<button class="button" (click)="showAnswer(question)">Toggle Answer</button>
 </div>
