@@ -22,7 +22,7 @@ export class QuestionService {
       .get<Question[]>(this.dataURL) 
       .pipe(
         map((questions) => {
-          const question = questions.find((q) => q.id == id);
+          const question = questions.find((q) => q.questionID == id);
           if (question){
 
             return question;

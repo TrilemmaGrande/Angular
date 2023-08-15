@@ -1,4 +1,5 @@
 
+<a style="position: fixed; z-index: 1 ; text-align: center; width: auto;" class="button" routerLink="/learn">Back</a>
 <div class="question-container" *ngFor="let question of questions$ | async as questions">
 <llce-question [question]="question" [showAnswer]="question.showAnswer"></llce-question>
 <button class="button" (click)="showAnswer(question)">Toggle Answer</button>

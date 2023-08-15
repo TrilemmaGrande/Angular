@@ -11,6 +11,7 @@ import { ResultComponent } from './result/result/result.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LearnModule } from './learn/learn.module';
+import {} from './question/question.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,8 @@ import { LearnModule } from './learn/learn.module';
     ExamComponent,
     ResultComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LearnModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

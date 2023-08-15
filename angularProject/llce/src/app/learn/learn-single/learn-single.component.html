@@ -1,5 +1,16 @@
-
+<a style="text-align: center" class="button" routerLink="/learn">Back</a>
 <div class="question-container" *ngIf="question$ | async as question">
-  <llce-question [question]="question" [showAnswer]="question.showAnswer"></llce-question>
-<button class="button" (click)="showAnswer(question)">Toggle Answer</button>
+  <div>
+    <llce-question
+      [question]="question"
+      [showAnswer]="question.showAnswer"
+    ></llce-question>
   </div>
+  <div class="button-wrapper">
+    <button class="button" (click)="previousQuestion()">previous</button>
+    <button class="button" (click)="showAnswer(question)">
+      Toggle Answer
+    </button>
+    <button class="button" (click)="nextQuestion()">next</button>
+  </div>
+</div>
