@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     LearnRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
 })
 export class LearnModule {}
