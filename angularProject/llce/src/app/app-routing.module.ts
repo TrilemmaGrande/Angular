@@ -16,11 +16,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'check',
+    path: 'check/:id',
     component: CheckComponent,
   },
   {
-    path: 'exam',
+    path: 'exam/:id',
     component: ExamComponent,
   },
   {
@@ -28,8 +28,7 @@ const routes: Routes = [
     component: LearnComponent,
     loadChildren: () =>
       import('./learn/learn.module').then((m) => m.LearnModule),
-  },
-  
+  },  
 ];
 
 @NgModule({

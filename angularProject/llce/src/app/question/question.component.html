@@ -5,22 +5,22 @@
     </div>
   
     <table class="option-table" *ngIf="question.questionType == 'mc'">
-      <tr *ngFor="let option of question.options">
-        <td class="option-item"><input type="checkbox" />{{ option }}</td>
+      <tr *ngFor="let option of question.options; index as i">
+        <td class="option-item"><input type="checkbox"  [(ngModel)]="selectedCheckboxes[i]" (change)="testGivenAnswersMC()"/>{{ option }}</td>
       </tr>
     </table>
   
     <table class="option-table" *ngIf="question.questionType == 'sc'">
-      <tr *ngFor="let option of question.options">  
+      <tr *ngFor="let option of question.options;  index as i">  
         <td class="option-item">
-          <input type="radio" name="radAnswer" />{{ option }}
+          <input type="radio" name="radAnswer" (change)="testGivendAnswersSC(i)"/>{{ option }}
         </td>
       </tr>
     </table>
   
     <table class="option-table" *ngIf="question.questionType == 'fi'">
       <tr>
-        <td class="option-item"><input type="text" /></td>
+        <td class="option-item"><input type="text" #answerInput  (input)="testGivenAnswersFI(answerInput.value)" /></td>
       </tr>
     </table>
   
