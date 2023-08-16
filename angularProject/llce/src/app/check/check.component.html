@@ -1,7 +1,7 @@
 <a style="text-align: center" class="button" routerLink="/home">Back</a>
 <div class="question-container" *ngIf="question$ | async as question">
   <div>
-    <div>wrong answers: {{wrongAnswers}} {{answerRight}} {{correctAnswers}} </div>
+    <div>wrong answers: {{wrongAnswers}} </div>
     <llce-question
       [question]="question"
       (rightAnswerChange)="handleRightAnswerChange($event)"
