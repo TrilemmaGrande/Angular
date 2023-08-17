@@ -41,7 +41,7 @@ export class CheckComponent {
   endCheck() {
     this.updateScore(this.answerNotGiven, this.answerRight);
     // RESULT SERVICE
-    // RESULT
+    this.router.navigate(['/result']);
   }
   skipQuestion() {
     this.skippedAnswers++;
@@ -52,7 +52,7 @@ export class CheckComponent {
       this.router.navigate(['/check', nextPage]);
     } else {
       // RESULT SERVICE
-      // RESULT
+      this.router.navigate(['/result']);
     }
     this.answerRight = false;
     this.answerNotGiven = false;
@@ -61,7 +61,7 @@ export class CheckComponent {
     this.pageID = this.route.snapshot.paramMap.get('id')!;
     const previousPage: number = parseInt(this.pageID) - 1;
     const nextPage: number = parseInt(this.pageID) + 1;
-    if (!this.answerNotGiven || this.answerRight) {
+    if (this.answerRight) {
       this.updateScore(this.answerNotGiven, this.answerRight);
       if (nextPage <= this.questionsLength) {
         this.question$ = this.service.getSingleQuestion(nextPage.toString());
@@ -73,6 +73,7 @@ export class CheckComponent {
       this.updateScore(this.answerNotGiven, this.answerRight);
       if (this.wrongAnswers < 8) {
         if (previousPage >= 1) {
+          console.log('prv', previousPage)
           this.question$ = this.service.getSingleQuestion(
             previousPage.toString()
           );
@@ -85,7 +86,7 @@ export class CheckComponent {
       }
       else {
          // RESULT SERVICE
-      // RESULT
+         this.router.navigate(['/result']);
       }
     }
   }

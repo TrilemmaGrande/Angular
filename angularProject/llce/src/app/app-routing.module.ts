@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LearnComponent } from './learn/learn/learn.component';
 import { ExamComponent } from './exam/exam.component';
 import { CheckComponent } from './check/check.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'exam/:id',
     component: ExamComponent,
   },
+{
+  path: 'result',
+  component: ResultComponent,
+},
   {
     path: 'learn',
     component: LearnComponent,

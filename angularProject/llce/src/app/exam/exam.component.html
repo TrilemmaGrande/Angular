@@ -1,1 +1,16 @@
-<p>exam works!</p>
+<a style="text-align: center" class="button" routerLink="/home">Back</a>
+<div class="question-container" *ngIf="question$ | async as question">
+  <div>
+    <llce-question
+      [question]="question"
+      (rightAnswerChange)="handleRightAnswerChange($event)"
+      (noAnswerChange)="handleNoAnswerChange($event)"
+    ></llce-question>
+  </div>
+  <div class="button-wrapper">
+    <button class="button" (click)="endCheck()">
+      End
+    </button>
+    <button class="button" (click)="submitAnswer()">Submit</button>
+  </div>
+</div>
