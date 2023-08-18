@@ -3,6 +3,7 @@ import { Observable, map } from 'rxjs';
 import { Question } from '../shared/question';
 import { QuestionService } from '../shared/question.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ResultService } from '../shared/result.service';
 
 @Component({
   selector: 'llce-check',
@@ -22,6 +23,7 @@ export class CheckComponent {
   answerNotGiven: boolean = false;
 
   constructor(
+    private rService: ResultService,
     private service: QuestionService,
     private route: ActivatedRoute,
     private router: Router
@@ -40,7 +42,7 @@ export class CheckComponent {
   }
   endCheck() {
     this.updateScore(this.answerNotGiven, this.answerRight);
-    // RESULT SERVICE
+    this.setServiceValues()
     this.router.navigate(['/result']);
   }
   skipQuestion() {
@@ -51,7 +53,7 @@ export class CheckComponent {
       this.question$ = this.service.getSingleQuestion(nextPage.toString());
       this.router.navigate(['/check', nextPage]);
     } else {
-      // RESULT SERVICE
+      this.setServiceValues()
       this.router.navigate(['/result']);
     }
     this.answerRight = false;
@@ -85,7 +87,7 @@ export class CheckComponent {
         }
       }
       else {
-         // RESULT SERVICE
+        this.setServiceValues()
          this.router.navigate(['/result']);
       }
     }
@@ -105,5 +107,13 @@ export class CheckComponent {
     }
     this.answerNotGiven = false;
     this.answerRight = false;
+  }
+  setServiceValues(){
+    this.rService.resetValues();
+    this.rService.rightAnswers = this.correctAnswers;
+    this.rService.wrongAnswers = this.wrongAnswers -1;
+    this.rService.skippedAnswers = this.skippedAnswers;
+    this.rService.showSkipped = true;
+    this.rService.showPassed = false;
   }
 }

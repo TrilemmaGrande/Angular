@@ -1,1 +1,12 @@
-<p>result works!</p>
+<a style="text-align: center" class="button" routerLink="/home">Home</a>
+<div style="display: flex; justify-content: center;">
+<div style="text-align: start;">
+    <span>Right Answers: {{rightAnswers}}</span> <br>
+    <span>Wrong Answers: {{wrongAnswers}}</span><br>
+    <span *ngIf="showSkipped">Skipped Answers: {{skippedAnswers}}</span><br>
+<span *ngIf="showPassed">
+    <span *ngIf="testPassed">Passed!</span>
+    <span *ngIf="!testPassed">Not Passed!</span>
+</span>    
+</div>
+</div>
