@@ -40,7 +40,7 @@ export class ExamComponent {
       this.questionsLength = length;
     });
   }
-  endCheck() {
+  endExam() {
     let testPassed: boolean = false;
     this.updateScore(this.answerNotGiven, this.answerRight);
     if(this.correctAnswers >= this.questionsLength * 0.8){
@@ -60,7 +60,7 @@ export class ExamComponent {
         this.question$ = this.service.getSingleQuestion(nextPage.toString());
         this.router.navigate(['/exam', nextPage]);
       } else {
-        this.endCheck();
+        this.endExam();
       }
     } else {
       this.updateScore(this.answerNotGiven, this.answerRight);
@@ -75,7 +75,7 @@ export class ExamComponent {
         this.question$ = this.service.getSingleQuestion(nextPage.toString());
         this.router.navigate(['/exam', nextPage]);
       } else {
-        this.endCheck();
+        this.endExam();
       }
     }
   }
